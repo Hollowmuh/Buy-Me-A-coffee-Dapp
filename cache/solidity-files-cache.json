@@ -1,47 +1,10 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\Solidity\\react\\my-react-app\\contracts\\Calculator.sol": {
-      "lastModificationDate": 1655978916581,
-      "contentHash": "dbcfa45291a97d7e2957cea7138a1a8b",
-      "sourceName": "contracts/Calculator.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/utils/math/SafeMath.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Calculator"
-      ]
-    },
-    "C:\\Users\\Solidity\\react\\my-react-app\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SafeMath.sol": {
-      "lastModificationDate": 1655961354842,
-      "contentHash": "2337f0279507b5edf14a07067adf0d05",
-      "sourceName": "@openzeppelin/contracts/utils/math/SafeMath.sol",
+    "C:\\Users\\Solidity\\react\\my-react-app\\contracts\\BuyMeACoffee.sol": {
+      "lastModificationDate": 1656497937350,
+      "contentHash": "1b49eb6196a2f49b2037cf5ca1a3035b",
+      "sourceName": "contracts/BuyMeACoffee.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
@@ -70,7 +33,7 @@
         "^0.8.0"
       ],
       "artifacts": [
-        "SafeMath"
+        "BuyMeACoffee"
       ]
     }
   }
