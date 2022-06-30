@@ -84,7 +84,7 @@ function App () {
             setContractBalance(_output);
         }
         catch(error) {
-            alert(error)
+            console.log(error)
         }
     }
     const balanceWithdraw = async () => {
@@ -102,22 +102,22 @@ function App () {
             balanceCheck();
         }
         catch(error) {
-            alert("Only Contract owner Can withdraw");
+            console.log(error);
         }
     }
     const getMemos = async () => {
         try {
             const {ethereum } = window;
             if (ethereum) {
-               const provider = new ethers.providers.Web3Provider(ethereum);
+               const provider = new ethers.providers.Web3Provider(ethereum, "any");
                const signer = provider.getSigner();
                const BuyMeACoffee = new ethers.Contract(
                 contractAddress,
                 contractAbi,
                 signer
-               );
+               )
                console.log("fetching memos from the blockchain..");
-                const memos = await BuyMeACoffee.getMemos();
+                const memos = await buyMeACoffee.getMemos();
                 console.log("fetched!");
                setMemo(memos);
       } else {
@@ -128,6 +128,7 @@ function App () {
       console.log(error);
     }
   };
+  console.log(memos);
     useEffect(() => {
         let BuyMeACoffee;
         checkWalletConnection();
@@ -151,7 +152,7 @@ function App () {
         if(ethereum) {
             const provider = new ethers.providers.Web3Provider(ethereum, "any");
             const signer = provider.getSigner();
-            BuyMeACoffee = new ethers.Contract(
+            const BuyMeACoffee = new ethers.Contract(
                 contractAddress,
                 contractAbi,
                 signer
@@ -237,17 +238,17 @@ function App () {
         <section>
          <div>Connected Address: {address}</div>
         </section>
+        </>
+    )
     {address && (memos.map((memo, idx) => {
         return (
             <div 
             key={idx} 
             style={{border:"2px solid", "borderRadius":"5px", padding: "5px", margin: "5px"}}>
                 <p style={{"fontWeight":"bold"}}>"{memo.message}"</p>
-                <p>From: {memo.Name} at {memo.timeSent.toString()}</p>
+                <p>From: {memo.name} at {memo.timestamp.toString()}</p>
             </div>
         )
     }))}
-    </>
-    )
 }
 export default App;
